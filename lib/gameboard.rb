@@ -5,21 +5,10 @@ class Gameboard
   attr_accessor :board
 
   def initialize
-    @board = [
-      ['', '', ''],
-      ['', '', ''],
-      ['', '', '']
-    ]
+    @board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
   end
 
-  def place_marker(row, spot, mark)
-    case row
-    when 'A'
-      board[0][spot - 1] = mark
-    when 'B'
-      board[1][spot - 1] = mark
-    when 'C'
-      board[2][spot - 1] = mark
-    end
+  def place_marker(spot, mark)
+    board[board.index(spot)] = mark
   end
 end
