@@ -13,16 +13,29 @@ class Gameboard
     [3, 5, 7],
     [4, 5, 6],
     [7, 8, 9]
-  ]
+  ].freeze
 
   def initialize
     @board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
   end
 
+  # Method to show the gameboard on the screen
+  def show_board
+    puts <<-HEREDOC
+       #{board[0]} | #{board[1]} | #{board[2]}
+      ---+---+---
+       #{board[3]} | #{board[4]} | #{board[5]}
+      ---+---+---
+       #{board[6]} | #{board[7]} | #{board[8]}
+    HEREDOC
+  end
+
+  # Method for placing a marker on a chosen spot by the player/cpu
   def place_marker(spot, mark)
     board[spot - 1] = mark
   end
 
+  # Method to run after each turn to check if there is a winner
   def check_for_winner
     winner = false
     until winner
@@ -37,4 +50,8 @@ class Gameboard
     end
     winner
   end
+
+  # Method to check if the board is full in case of a tie
+
+  # Method to reset the gameboard
 end
