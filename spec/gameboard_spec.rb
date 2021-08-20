@@ -37,5 +37,12 @@ describe Gameboard do
       gameboard.place_marker(3, 'X')
       expect(gameboard.check_for_winner).to eql(true)
     end
+    it 'Spots 1, 5, 9' do
+      gameboard = Gameboard.new
+      gameboard.place_marker(1, 'X')
+      gameboard.place_marker(5, 'X')
+      gameboard.place_marker(9, 'X')
+      expect(gameboard.check_for_winner).to eql(true)
+    end
   end
 end

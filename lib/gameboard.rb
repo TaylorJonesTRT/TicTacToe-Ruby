@@ -1,11 +1,7 @@
 # gameboard.rb
 
-require 'player'
-
 # Gameboard for the Tic Tac Toe game
 class Gameboard
-  include Player
-
   attr_accessor :board
 
   WINNING_CELLS = [
@@ -24,17 +20,21 @@ class Gameboard
   end
 
   def place_marker(spot, mark)
-    board[board.index(spot)] = mark
+    board[spot - 1] = mark
   end
 
   def check_for_winner
-    # need to refactor this into an each method
-    for combo in WINNING_CELLS do
-      if combo[1] == combo[0] && combo[2] == combo[0]
-        true
-      else
-        false
+    winner = false
+    until winner
+      WINNING_CELLS.each do |combo|
+        if board[combo[1] - 1] == board[combo[0] - 1] && board[combo[2] - 1] == board[combo[0] - 1]
+          winner = true
+          break
+        else
+          winner = false
+        end
       end
     end
+    winner
   end
 end
