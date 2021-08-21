@@ -52,6 +52,25 @@ class Gameboard
   end
 
   # Method to check if the board is full in case of a tie
+  def check_for_tie
+    filled_spots = []
+    i = 1
+    board.each do |spot|
+      if spot != i
+        filled_spots.push(i)
+        i += 1
+        next
+      else
+        i += 1
+        next
+      end
+    end
+    if filled_spots.length == 9
+      true
+    else
+      false
+    end
+  end
 
   # Method to reset the gameboard
   def reset_board

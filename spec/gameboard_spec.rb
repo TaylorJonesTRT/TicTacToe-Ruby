@@ -56,7 +56,19 @@ describe Gameboard do
       for i in 1..9 do
         gameboard.place_marker(i, 'X')
       end
-      expect(gameboard.board_full).to eql(true)
+      expect(gameboard.check_for_tie).to eql(true)
+    end
+    it 'Making sure the game is called as a tie if all spots are filled in #2' do
+      gameboard = Gameboard.new
+      # Running a for loop to place a X marker on each spot 1-9 so that board_full
+      # should return true
+      for i in 1..5 do
+        gameboard.place_marker(i, 'X')
+      end
+      for i in 6..9 do
+        gameboard.place_marker(i, 'O')
+      end
+      expect(gameboard.check_for_tie).to eql(true)
     end
     it 'Making sure the board gets reset when method is called' do
       gameboard = Gameboard.new
