@@ -48,8 +48,8 @@ describe Gameboard do
 end
 
 describe Gameboard do
-  describe 'Checking to see if there is a tie in the game' do
-    it 'All board spots filled in' do
+  describe 'Testing the game reset and tie indicator methods' do
+    it 'Making sure the game is called as a tie if all spots are filled in' do
       gameboard = Gameboard.new
       # Running a for loop to place a X marker on each spot 1-9 so that board_full
       # should return true
@@ -57,6 +57,12 @@ describe Gameboard do
         gameboard.place_marker(i, 'X')
       end
       expect(gameboard.board_full).to eql(true)
+    end
+    it 'Making sure the board gets reset when method is called' do
+      gameboard = Gameboard.new
+      gameboard.place_marker(4, 'X')
+      gameboard.reset_board
+      expect(gameboard.board).to eql([1, 2, 3, 4, 5, 6, 7, 8, 9])
     end
   end
 end

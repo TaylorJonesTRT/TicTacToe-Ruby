@@ -54,4 +54,7 @@ class Gameboard
   # Method to check if the board is full in case of a tie
 
   # Method to reset the gameboard
+  def reset_board
+    @board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+  end
 end
