@@ -1,4 +1,4 @@
-# gameboard.rb
+# lib/gameboard.rb
 
 # Gameboard for the Tic Tac Toe game
 class Gameboard

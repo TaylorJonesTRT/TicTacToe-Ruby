@@ -1,4 +1,4 @@
-# player.rb
+# lib/player.rb
 class Player
   attr_accessor :name, :symbol
 
