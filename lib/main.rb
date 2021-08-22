@@ -1,2 +1,3 @@
+require 'game'
 require 'gameboard'
-require 'player.rb'
+require 'player'
