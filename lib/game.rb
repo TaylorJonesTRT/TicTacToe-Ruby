@@ -2,7 +2,7 @@
 class Game
   def initialize
     @board = Board.new
-    @amount_of_players
+    @amount_of_players = 0
     @first_player = nil
     @second_player = nil
     @current_player = nil
