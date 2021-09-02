@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # lib/gameboard.rb
 
 # Gameboard for the Tic Tac Toe game
@@ -56,20 +58,15 @@ class Gameboard
     filled_spots = []
     i = 1
     board.each do |spot|
-      if spot != i
+      if spot == i
+        i += 1
+      else
         filled_spots.push(i)
         i += 1
-        next
-      else
-        i += 1
-        next
       end
+      next
     end
-    if filled_spots.length == 9
-      true
-    else
-      false
-    end
+    filled_spots.length == 9
   end
 
   # Method to reset the gameboard

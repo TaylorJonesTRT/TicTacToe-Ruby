@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # lib/player.rb
 class Player
   attr_accessor :name, :symbol

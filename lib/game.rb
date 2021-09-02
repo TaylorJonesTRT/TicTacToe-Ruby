@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # lib/game.rb
 class Game
   def initialize
