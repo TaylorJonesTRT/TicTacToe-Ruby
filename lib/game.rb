@@ -12,30 +12,29 @@ class Game
   # end
 
   def game_start_screen
-    puts "Welcome to the game of Tic Tac Toe!"
-    puts "How many players will be playing? (1 or 2)"
+    puts 'Welcome to the game of Tic Tac Toe!'
+    puts 'How many players will be playing? (1 or 2)'
     @amount_of_players = gets.chomp
     case amount_of_players
     when 2
-      puts "What is the first players name"
+      puts 'What is the first players name'
       first_player_name = gets.chomp
-      puts "What is the first players symbol? (X or O)"
+      puts 'What is the first players symbol? (X or O)'
       first_player_symbol = gets.chomp
-      puts "What is the second players name?"
+      puts 'What is the second players name?'
       second_players_name = gets.chomp
-      case first_player_symbol
-      when X
-        second_player_symbol = "O"
-      else
-        second_player_symbol = "X"
-      end
-      @first_player = Player.new(first_player_name, first_player_symbol, is_computer = false)
-      @second_player = Player.new(second_players_name, second_player_symbol, is_computer = false)
+      second_player_symbol = if first_player_symbol == 'X'
+                               'O'
+                             else
+                               'X'
+                             end
+      @first_player = Player.new(first_player_name, first_player_symbol, false)
+      @second_player = Player.new(second_players_name, second_player_symbol, false)
     else
-      puts "What is your name?"
+      puts 'What is your name?'
       first_player_name = gets.chomp
-      @first_player = Player.new(first_player_name, 'X', is_computer = false)
-      @second_player = Player.new('Computer', 'O', is_computer = true)
+      @first_player = Player.new(first_player_name, 'X', false)
+      @second_player = Player.new('Computer', 'O', true)
     end
   end
 
