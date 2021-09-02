@@ -7,10 +7,5 @@
   "scripts": {
     "precommit": "lint-staged",
     "test": "rspec ./spec/."
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged && npm run test"
-    }
   }
 }
