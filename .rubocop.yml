@@ -13,4 +13,6 @@ AllCops:
     Exclude:
       - './spec/*.rb'
 Metrics/MethodLength:
-  enabled: false
+  Enabled: false
+Metrics/AbcSize:
+  Enabled: false

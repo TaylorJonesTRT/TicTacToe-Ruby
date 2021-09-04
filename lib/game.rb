@@ -19,19 +19,15 @@ class Game
     @amount_of_players = gets.chomp
     case amount_of_players
     when 2
-      puts 'What is the first players name'
-      first_player_name = gets.chomp
       puts 'What is the first players symbol? (X or O)'
       first_player_symbol = gets.chomp
-      puts 'What is the second players name?'
-      second_players_name = gets.chomp
       second_player_symbol = if first_player_symbol == 'X'
                                'O'
                              else
                                'X'
                              end
-      @first_player = Player.new(first_player_name, first_player_symbol, false)
-      @second_player = Player.new(second_players_name, second_player_symbol, false)
+      @first_player = Player.new('Player 1', first_player_symbol, false)
+      @second_player = Player.new('Player 2', second_player_symbol, false)
     else
       puts 'What is your name?'
       first_player_name = gets.chomp
@@ -43,8 +39,15 @@ class Game
   # def player_move(player)
   # end
 
-  # def switch_current_player
-  # end
+  def switch_current_player(current_player)
+    @current_player = case current_player.name
+                      when 'Player 1'
+                        second_player
+                      else
+                        first_player
+                      end
+    @current_player
+  end
 
   # def game_over
   # end
