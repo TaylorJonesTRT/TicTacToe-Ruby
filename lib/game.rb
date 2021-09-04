@@ -39,8 +39,8 @@ class Game
   # def player_move(player)
   # end
 
-  def switch_current_player(current_player)
-    @current_player = case current_player.name
+  def switch_current_player(player)
+    @current_player = case player.name
                       when 'Player 1'
                         second_player
                       else
