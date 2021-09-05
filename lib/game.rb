@@ -42,9 +42,9 @@ class Game
   def switch_current_player(player)
     @current_player = case player.name
                       when 'Player 1'
-                        second_player
+                        @second_player
                       else
-                        first_player
+                        @first_player
                       end
     @current_player
   end
